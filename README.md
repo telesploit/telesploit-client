@@ -3,7 +3,7 @@ Scripts to create an open source Telesploit client
 
 From the computer being used to access the Telesploit server, download the files or run 'git clone https://github.com/telesploit/telesploit-client.git'
 
-On Linux, update the relay_fqdn variable in telesploit-client/server.cfg.
+On Linux, update the relay_fqdn variable in telesploit-client/linux/client-configs/client.cfg.
 From a console, navigate to the telesploit-client/linux/ directory and run ./setup_client.sh.
 After the client is configured run ./create_tunnels to establish the required connections to the relay.
 Finally run ./console.sh to obtain a shell on the Telesploit server.
