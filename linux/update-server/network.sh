@@ -23,14 +23,14 @@ if echo "$dhcp_or_static" | grep -iq "^s" ; then
         echo
     fi
     echo 'creating custom config file ./network.conf'
-    echo "nmcli con add con-name telesploit ifname eth0 type ethernet ip4 $static_ip_cidr gw4 $static_gw" > ./network.conf
+    echo "nmcli con add con-name telesploit ifname $network_interface_name type ethernet ip4 $static_ip_cidr gw4 $static_gw" > ./network.conf
     echo "nmcli con mod telesploit ipv4.dns $static_dns1" >> ./network.conf
     echo "nmcli con mod telesploit +ipv4.dns $static_dns2" >> ./network.conf
 
 elif echo "$dhcp_or_static" | grep -iq "^d" ; then
     echo 'The Telesploit server will be set to use a DHCP assigned IP address.'
     echo 'creating custom config file ./network.conf'
-    echo 'nmcli con add con-name telesploit ifname eth0 type ethernet' > ./network.conf
+    echo 'nmcli con add con-name telesploit ifname $network_interface_name type ethernet' > ./network.conf
 else
     echo 'The entered option was not understood. Please run the updater again and enter d/D/DHCP or s/S/STATIC'
     echo 'No changes have been made'
