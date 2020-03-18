@@ -1,6 +1,5 @@
 <<<<<<< HEAD
 # telesploit-client
-Scripts to create an open source Telesploit client
 <<<<<<< HEAD
 =======
 # telesploit-client
